@@ -1,5 +1,7 @@
 package learnSelenium;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +21,7 @@ public static void main(String[] args) throws InterruptedException {
 		
 		driver.get("https://learn.aigyan.in/login/");
 		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		WebElement name= driver.findElement(By.xpath("//input[@name=\"log\"]"));
 		
 		WebElement pwd = driver.findElement(By.xpath("//input[@name=\"pwd\"]"));
